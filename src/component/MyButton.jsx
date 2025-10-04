@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const MyButton = () => {
+const MyButton = ({ children }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <button
       style={{
-        width: "fit-content",
+        minWidth: "150px",
+        // height: "100px",
         backgroundColor: isHovered ? "#75017373" : "#750173",
         color: "white",
         border: "none",
@@ -17,7 +18,7 @@ const MyButton = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      Click Me
+      {children}
     </button>
   );
 };
